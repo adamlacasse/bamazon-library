@@ -57,12 +57,12 @@ app.get("/joke", (req, results) => {
 app.post("/register", (request, results) => {
 var item = {
   image: request.body.image,
-  product_name: request.body.name,
-  product_desc: request.body.desc,
-  department_name: request.body.dept,
-  consumer_price: request.body.price,
-  stock_quantity: request.body.quant,
-  business_cost: request.body.cost
+  product_name: request.body.product_name,
+  product_desc: request.body.product_desc,
+  department_name: request.body.department_name,
+  consumer_price: request.body.consumer_price,
+  stock_quantity: request.body.stock_quantity,
+  business_cost: request.body.business_cost
 };
   console.log(JSON.stringify(request.body));
   // var s = {email: req.body.email};
@@ -75,16 +75,16 @@ var item = {
       throw err;
     }
     console.log(result);
-  })
-  // 
-  results.render('test', {
+  }); // end of connection.query
+  
+  results.render('test', {data:5,
     image: request.body.image,
-    product_name: request.body.name,
-    product_desc: request.body.desc,
-    department_name: request.body.dept,
-    consumer_price: request.body.price,
-    stock_quantity: request.body.quant,
-    business_cost: request.body.cost
+    product_name: request.body.product_name,
+    product_desc: request.body.product_desc,
+    department_name: request.body.department_name,
+    consumer_price: request.body.consumer_price,
+    stock_quantity: request.body.stock_quantity,
+    business_cost: request.body.business_cost
   })
 });
 /*
